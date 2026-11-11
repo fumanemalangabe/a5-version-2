@@ -11,7 +11,7 @@ def load_data():
   mask = df["region"] == regions & df["date"].between(pd.Timestamp(start), pd.Timestamp(end))
   data = df[mask]
   if data is None: st.warning("No sales for this selection."); st.stop()
-    c1, c2, c3 = st.columns(3)
+   c1,c2,c3=st.columns(3)
 c1.metric("Revenue", f"R{data['revenue'].sum():,.0f}")
 c2.metric("Orders", len(data))
 c3.metric("Average order", f"R{data['revenue'].mean():,.2f}")
